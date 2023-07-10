@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Indian Singers Dashboard</title>
+  <style>
+    /* Add your own custom styles here */
+  </style>
+  <script>
+    function displaySingerInfo() {
+      var selectedSinger = document.getElementById("search-bar").value;
+      var singerInfoDiv = document.getElementById("singer-info");
+
+      var singers = {
+        "Arijit Singh": "https://www.instagram.com/arijitsingh",
+        "Shreya Ghoshal": "https://www.instagram.com/shreyaghoshal",
+        "Neha Kakkar": "https://www.instagram.com/nehakakkar",
+        "Atif Aslam": "https://www.instagram.com/atifaslam",
+        "Sonu Nigam": "https://www.instagram.com/sonunigamofficial",
+        "Sunidhi Chauhan": "https://www.instagram.com/sunidhichauhan5",
+        "Armaan Malik": "https://www.instagram.com/armaanmalik",
+        "Kishore Kumar": "https://www.instagram.com/kishorekumar",
+        "Lata Mangeshkar": "https://www.instagram.com/lata_mangeshkar",
+        "Mika Singh": "https://www.instagram.com/mikasingh",
+        "Udit Narayan": "https://www.instagram.com/uditnarayanmusic",
+        "Shaan": "https://www.instagram.com/singer_shaan",
+        "Rahat Fateh Ali Khan": "https://www.instagram.com/officialrfakworld",
+        "Shalmali Kholgade": "https://www.instagram.com/shalmiaow",
+        "Kailash Kher": "https://www.instagram.com/kailashkher",
+        "Jubin Nautiyal": "https://www.instagram.com/jubin_nautiyal",
+        "Palak Muchhal": "https://www.instagram.com/palakmuchhal3",
+        "Nakash Aziz": "https://www.instagram.com/nakash_aziz",
+        "Badshah": "https://www.instagram.com/badboyshah",
+        "Darshan Raval": "https://www.instagram.com/darshanravaldz",
+      };
+
+      if (selectedSinger in singers) {
+        var singerInfoHtml = "<h2>" + selectedSinger + "</h2>";
+        singerInfoHtml += "<h3>Social Media Links:</h3>";
+        singerInfoHtml += "<p><a href='" + singers[selectedSinger] + "' target='_blank'>Instagram</a></p>";
+        // Add more social media links as needed
+
+        singerInfoDiv.innerHTML = singerInfoHtml;
+      } else {
+        singerInfoDiv.innerHTML = "<p>Singer not found</p>";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Indian Singers Dashboard</h1>
+  <label for="search-bar">Search Singer:</label>
+  <select id="search-bar" onchange="displaySingerInfo()">
+    <option value="">Select a singer...</option>
+    <option value="Arijit Singh">Arijit Singh</option>
+    <option value="Shreya Ghoshal">Shreya Ghoshal</option>
+    <option value="Neha Kakkar">Neha Kakkar</option>
+    <option value="Atif Aslam">Atif Aslam</option>
+    <option value="Sonu Nigam">Sonu Nigam</option>
+    <option value="Sunidhi Chauhan">Sunidhi Chauhan</option>
+    <option value="Armaan Malik">Armaan Malik</option>
+    <option value="Kishore Kumar">Kishore Kumar</option>
+    <option value="Lata Mangeshkar">Lata Mangeshkar</option>
+    <option value="Mika Singh">Mika Singh</option>
+    <option value="Udit Narayan">Udit Narayan</option>
+    <option value="Shaan">Shaan</option>
+    <option value="Rahat Fateh Ali Khan">Rahat Fateh Ali Khan</option>
+    <option value="Shalmali Kholgade">Shalmali Kholgade</option>
+    <option value="Kailash Kher">Kailash Kher</option>
+    <option value="Jubin Nautiyal">Jubin Nautiyal</option>
+    <option value="Palak Muchhal">Palak Muchhal</option>
+    <option value="Nakash Aziz">Nakash Aziz</option>
+    <option value="Badshah">Badshah</option>
+    <option value="Darshan Raval">Darshan Raval</option>
+  </select>
+  <div id="singer-info"></div>
+</body>
+</html>
